@@ -13,8 +13,8 @@ module.exports = {
         var i = ff.getMinutes();
         var s = ff.getSeconds();
         myfile.name = "foto"+a+m+d+h+i+s+ myfile.name.substr(-4);
-        datos.foto = myfile.name;
-        myfile.mv(`${process.env.DIR_FOTOS}${myfile.name}`, function(err) {
+        datos.foto = myfile.name;/* ${process.env.DIR_FOTOS} */
+        myfile.mv(`c:/public/${myfile.name}`, function(err) {
             if(err) {
                 console.log(err);
                 return res.status(500).send({msg:"Error en envio de archivo"})
